@@ -18,6 +18,7 @@
     <p>LENGTH: <%= movie.length + ' min'%> </p>
     <p>RELEASE DATE: <%= movie.release_date %> </p>
     <p>GENERO:<%= movie.genre.name %></p>
+    <p>ACTORES:<%= movie.actors.firs_name %></p>
     <br>
     <section>
        <button><a href="/movies/edit/<%= movie.id %>">Editar</a></button> 

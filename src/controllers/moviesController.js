@@ -14,14 +14,14 @@ const Actors = db.Actor;
 
 const moviesController = {
   list: (req, res) => {
-    db.Movie.findAll({include:['genre']})
+    db.Movie.findAll({include:['genre','actors']})
     .then((movies) => {
        
       return res.render("moviesList.ejs", { movies });
     });
   },
   detail: (req, res) => {
-    db.Movie.findByPk(req.params.id, {include:['genre']}).then((movie) => {
+    db.Movie.findByPk(req.params.id, {include:['genre','actors']}).then((movie) => {
       res.render("moviesDetail.ejs", { movie });
     });
   },

@@ -1,3 +1,5 @@
+const moviesController = require("../../controllers/moviesController");
+
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Actor';
     let cols = {
@@ -32,6 +34,14 @@ module.exports = (sequelize, dataTypes) => {
     const Actor = sequelize.define(alias, cols, config); 
 
     //Aquí debes realizar lo necesario para crear las relaciones con el modelo (Movie)
- 
+    Actor.associate = models =>{
+        Actor.belongsToMany(models.Movie,{
+            as:'movies',
+            through:'actor_movie',
+            foreignKey:'actor_id',
+            otherKey:'movie_id'
+
+        })
+    }
     return Actor
 };
