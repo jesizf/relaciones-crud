@@ -19,7 +19,8 @@
     <p>RELEASE DATE: <%= movie.release_date %> </p>
     <br>
     <section>
-        <!--Aquí debe colocar los botones de Modificar - Borrar y Listado de Películas-->
+       <button><a href="/movies/edit/<%= movie.id %>">Editar</a></button> 
+       <button><a href="/movies/delete/<%= movie.id %>">Eliminar</a></button> <!--Aquí debe colocar los botones de Modificar - Borrar y Listado de Películas-->
     </section>
 
 </body>
